@@ -16,6 +16,7 @@
     "generate": "node index.js",
     "rarity": "node utils/rarity.js",
     "preview": "node utils/preview.js",
+    "uploadNFT": "node utils/uploadNFTs.cjs",
     "pixelate": "node utils/pixelate.js",
     "update_info": "node utils/update_info.js"
   },
@@ -23,6 +24,7 @@
   "license": "MIT",
   "dependencies": {
     "canvas": "^2.8.0",
+    "nft.storage": "^3.3.0",
     "sha1": "^1.1.1"
   }
 }

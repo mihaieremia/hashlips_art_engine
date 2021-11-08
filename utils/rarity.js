@@ -66,13 +66,15 @@ data.forEach((element) => {
 // convert occurrences to percentages
 for (var layer in rarityData) {
   for (var attribute in rarityData[layer]) {
+    let counts = rarityData[layer][attribute].occurrence;
     // convert to percentage
     rarityData[layer][attribute].occurrence =
       (rarityData[layer][attribute].occurrence / editionSize) * 100;
 
     // show two decimal places in percent
     rarityData[layer][attribute].occurrence =
-      rarityData[layer][attribute].occurrence.toFixed(0) + "% out of 100%";
+    counts + " out of " + editionSize;
+    rarityData[layer][attribute].rarityScore = counts * 0.001;
   }
 }
 

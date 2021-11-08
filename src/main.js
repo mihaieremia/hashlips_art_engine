@@ -172,6 +172,7 @@ const addAttributes = (_element) => {
 
 const loadLayerImg = async (_layer) => {
   return new Promise(async (resolve) => {
+    console.log(_layer);
     const image = await loadImage(`${_layer.selectedElement.path}`);
     resolve({ layer: _layer, loadedImage: image });
   });
@@ -283,6 +284,7 @@ const startCreating = async () => {
   let editionCount = 1;
   let failedCount = 0;
   let abstractedIndexes = [];
+  console.log("Here:",layerConfigurations.length);
   for (
     let i = network == NETWORK.sol ? 0 : 1;
     i <= layerConfigurations[layerConfigurations.length - 1].growEditionSizeTo;
