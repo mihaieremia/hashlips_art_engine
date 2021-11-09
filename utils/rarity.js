@@ -41,14 +41,17 @@ layerConfigurations.forEach((config) => {
     }
   });
 });
-
+let categoryCount = {};
 // fill up rarity chart with occurrences from metadata
 data.forEach((element) => {
   let attributes = element.attributes;
   attributes.forEach((attribute) => {
     let traitType = attribute.trait_type;
+    if (!categoryCount[traitType]) {
+      categoryCount[traitType] = 0;
+    }
+    categoryCount[traitType] += 1;
     let value = attribute.value;
-
     let rarityDataTraits = rarityData[traitType];
     rarityDataTraits.forEach((rarityDataTrait) => {
       if (rarityDataTrait.trait == value) {
@@ -58,27 +61,48 @@ data.forEach((element) => {
     });
   });
 });
-
 // convert occurrences to percentages
+console.log(categoryCount);
+let traitMap = {};
 for (var layer in rarityData) {
+  let valueMap = {};
   for (var attribute in rarityData[layer]) {
     let counts = rarityData[layer][attribute].occurrence;
+    let percentage = parseFloat((rarityData[layer][attribute].occurrence / editionSize)) * 100;
+    let attributeFrequency = parseFloat(counts / editionSize);
+    let traitOccurancePercentage = parseFloat((categoryCount[layer] / editionSize)) * 100;
+    let traitFrequency = parseFloat(categoryCount[layer] / editionSize);
+    let traitRarity =parseFloat((1 / traitFrequency).toFixed(4));
+    valueMap = {
+      ...valueMap, [rarityData[layer][attribute].trait]: {
+        attributeOccurrence: counts, 
+        attributeOccurrencePercentage: parseFloat(percentage.toFixed(4)),
+        attributeRarity: attributeFrequency,
+        traitOccurance: categoryCount[layer],
+        traitOccurancePercentage: parseFloat(traitOccurancePercentage.toFixed(4)),
+        traitRarity: traitFrequency,
+
+      }
+    }
     // convert to percentage
-    rarityData[layer][attribute].occurrence =
-      (rarityData[layer][attribute].occurrence / editionSize) * 100;
-
     // show two decimal places in percent
-    rarityData[layer][attribute].occurrence =
-    counts + " out of " + editionSize;
-    rarityData[layer][attribute].rarityScore = counts * 0.001;
   }
+  traitMap = { ...traitMap, [layer]: { ...valueMap } }
 }
 
-// print out rarity data
-for (var layer in rarityData) {
-  console.log(`Trait type: ${layer}`);
-  for (var trait in rarityData[layer]) {
-    console.log(rarityData[layer][trait]);
+let _data = data;
+for (let index = 0; index < _data.length; index++) {
+  const el = _data[index];
+  let sumRarityPerNFT = 0;
+  for (let iA = 0; iA < el['attributes'].length; iA++) {
+    const at = el['attributes'][iA];
+    _data[index].attributes[iA] = { ..._data[index].attributes[iA], ...traitMap[at.trait_type][at.value] }
+    sumRarityPerNFT += parseFloat(traitMap[at.trait_type][at.value].percentage);
+    // console.log(sumRarityPerNFT);
   }
-  console.log();
+  _data[index]['rarityAVG'] = parseFloat((sumRarityPerNFT / el['attributes'].length).toFixed(2))
 }
+fs.writeFileSync(
+  `${basePath}/build/json/_metadata.json`,
+  JSON.stringify(_data, null, 2)
+);
