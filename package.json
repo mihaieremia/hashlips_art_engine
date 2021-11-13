@@ -17,6 +17,7 @@
     "rarity": "node utils/rarity.js",
     "preview": "node utils/preview.js",
     "uploadNFT": "node utils/uploadNFTs.cjs",
+    "reorg": "node utils/reorgFiles.cjs",
     "pixelate": "node utils/pixelate.js",
     "update_info": "node utils/update_info.js",
     "preview_gif": "node utils/preview_gif.js"
@@ -24,9 +25,12 @@
   "author": "Daniel Eugene Botha (HashLips)",
   "license": "MIT",
   "dependencies": {
+    "@ipld/car": "^3.1.20",
+    "bignumber.js": "^9.0.1",
     "canvas": "^2.8.0",
-    "nft.storage": "^3.3.0",
     "gif-encoder-2": "^1.0.5",
+    "ipfs-car": "^0.5.9",
+    "nft.storage": "^3.3.0",
     "sha1": "^1.1.1"
   }
 }

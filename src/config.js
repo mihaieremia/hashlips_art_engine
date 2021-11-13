@@ -5,8 +5,8 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "Elrond Girls";
-const description = "The Elrond Girls NFT Collection";
+const namePrefix = "eGirl";
+const description = "The unique Elrond Girls NFT Collection by Trust Staking!";
 const baseUri = "ipfs://NewUriToReplace";
 
 const solanaMetadata = {
@@ -47,11 +47,10 @@ const layerConfigurations = [
         name: "Neck",
       },
       { name: "Lips" },
-      { name: "Pets" },
     ],
   },
   {
-    growEditionSizeTo: 88,
+    growEditionSizeTo: 50,
     layersOrder: [
       { name: "Backgrounds" },
       { name: "Skins" },
@@ -124,6 +123,7 @@ const background = {
 
 const extraMetadata = {
   royalty: 1000,
+  tags: ["eGirl", "TrustStaking", "Digital", "Girls", "Premium", "Rarity", "VIP", "Unique"]
 };
 
 const rarityDelimiter = "#";
