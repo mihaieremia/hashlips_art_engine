@@ -6,7 +6,7 @@ const network = NETWORK.eth;
 
 // General metadata for Ethereum
 const namePrefix = "Elrond Girls";
-const description = "The unique Elrond Girls NFT Collection by Trust Staking!";
+const description = "The Elrond Girls NFT Collection";
 const baseUri = "ipfs://NewUriToReplace";
 
 const solanaMetadata = {
@@ -1382,9 +1382,11 @@ const shuffleLayerConfigurations = false;
 const debugLogs = false;
 
 const format = {
-  width: 1000,
-  height: 1000,
-  smoothing: true,
+  width: 550,
+  height: 550,
+  width: 512,
+  height: 512,
+  smoothing: false,
 };
 
 const gif = {
@@ -1420,7 +1422,6 @@ const background = {
 
 const extraMetadata = {
   royalty: 1000,
-  tags: ["eGirl", "TrustStaking", "Digital", "Girls", "Premium", "Rarity", "VIP", "Unique"]
 };
 
 const rarityDelimiter = "#";
