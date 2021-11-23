@@ -18,6 +18,7 @@
     "preview": "node utils/preview.js",
     "uploadNFT": "node utils/uploadNFTs.cjs",
     "reorg": "node utils/reorgFiles.cjs",
+    "getRarity": "node utils/getRarity.js",
     "pixelate": "node utils/pixelate.js",
     "update_info": "node utils/update_info.js",
     "preview_gif": "node utils/preview_gif.js"
@@ -26,11 +27,15 @@
   "license": "MIT",
   "dependencies": {
     "@ipld/car": "^3.1.20",
+    "axios": "^0.24.0",
+    "base-path-converter": "^1.0.2",
     "bignumber.js": "^9.0.1",
     "canvas": "^2.8.0",
+    "form-data": "^4.0.0",
     "gif-encoder-2": "^1.0.5",
     "ipfs-car": "^0.5.9",
     "nft.storage": "^3.3.0",
+    "recursive-fs": "^2.1.0",
     "sha1": "^1.1.1"
   }
 }
