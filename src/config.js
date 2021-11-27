@@ -5,8 +5,9 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "Elrond Girls";
-const description = "The unique Elrond Girls NFT Collection by Trust Staking!";
+const namePrefix = "Elrond Monkeys";
+const description =
+  "The unique Elrond Monkeys NFT Collection by Trust Staking!";
 const baseUri = "ipfs://NewUriToReplace";
 
 const solanaMetadata = {
@@ -24,1355 +25,640 @@ const solanaMetadata = {
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 85,
+    growEditionSizeTo: 116,
     layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
+      { name: "Background" },
+      { name: "Weapon" }, // Dynamic
+      { name: "Body" },
       {
-        name: "MakeUp",
+        name: "Ears",
+      },
+      {
+        name: "Rings", // Dynamic
       },
       {
         name: "Eyes",
       },
-      { name: "Lashes" },
-      { name: "Hair" },
       {
-        name: "Tattoos",
+        name: "Head",
       },
+      { name: "Scar" }, // Dynamic
       {
-        name: "Sunglasses",
+        name: "Accessory", // Dynamic
       },
-      { name: "Earrings" },
-      {
-        name: "Neck",
-      },
-      { name: "Lips" },
-      { name: "Pets" },
     ],
   },
+  
   {
-    growEditionSizeTo: 170,
+    growEditionSizeTo: 232,
     layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
+      { name: "Background" },
+      { name: "Weapon" }, // Dynamic
+      { name: "Body" },
       {
-        name: "MakeUp",
+        name: "Ears",
+      },
+      {
+        name: "Rings", // Dynamic
       },
       {
         name: "Eyes",
       },
-      { name: "Lashes" },
-      { name: "Hair" },
       {
-        name: "Tattoos",
+        name: "Head",
       },
+      { name: "Scar" }, // Dynamic
       {
-        name: "Sunglasses",
+        name: "Accessory", // Dynamic
       },
-      { name: "Earrings" },
-      {
-        name: "Neck",
-      },
-      { name: "Masks" },
-      { name: "Pets" },
     ],
   },
+
   {
-    growEditionSizeTo: 336,
+    growEditionSizeTo: 580,
     layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
+      { name: "Background" },
+      { name: "Weapon" }, // Dynamic
+      { name: "Body" },
       {
-        name: "MakeUp",
+        name: "Ears",
+      },
+      {
+        name: "Rings", // Dynamic
       },
       {
         name: "Eyes",
       },
-      { name: "Lashes" },
-      { name: "Hair" },
       {
-        name: "Tattoos",
+        name: "Head",
       },
+      { name: "Scar" }, // Dynamic
       {
-        name: "Sunglasses",
+        name: "Accessory", // Dynamic
       },
-      { name: "Earrings" },
-      {
-        name: "Neck",
-      },
-      { name: "Masks" },
     ],
   },
+
   {
-    growEditionSizeTo: 502,
+    growEditionSizeTo: 696,
     layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
+      { name: "Background" },
+      { name: "Body" },
       {
-        name: "MakeUp",
+        name: "Ears",
+      },
+      {
+        name: "Rings", // Dynamic
       },
       {
         name: "Eyes",
       },
-      { name: "Lashes" },
-      { name: "Hair" },
       {
-        name: "Tattoos",
+        name: "Head",
       },
+      { name: "Scar" }, // Dynamic
+      { name: "Lasers" }, // Dynamic
       {
-        name: "Sunglasses",
+        name: "Accessory", // Dynamic
       },
-      { name: "Earrings" },
-      {
-        name: "Neck",
-      },
-      { name: "Lips" },
     ],
   },
+
   {
-    growEditionSizeTo: 668,
+    growEditionSizeTo: 928,
     layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
+      { name: "Background" },
+      { name: "Weapon" }, // Dynamic
+      { name: "Body" },
       {
-        name: "MakeUp",
+        name: "Ears",
+      },
+      {
+        name: "Rings", // Dynamic
       },
       {
         name: "Eyes",
       },
-      { name: "Lashes" },
-      { name: "Hair" },
       {
-        name: "Tattoos",
+        name: "Head",
       },
-      {
-        name: "Sunglasses",
-      },
-      {
-        name: "Neck",
-      },
-      { name: "Masks" },
-      { name: "Pets" },
+      { name: "Scar" }, // Dynamic
     ],
   },
+
   {
-    growEditionSizeTo: 834,
+    growEditionSizeTo: 1044,
     layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
+      { name: "Background" },
+      { name: "Weapon" }, // Dynamic
+      { name: "Body" },
       {
-        name: "MakeUp",
+        name: "Ears",
+      },
+      {
+        name: "Rings", // Dynamic
       },
       {
         name: "Eyes",
       },
-      { name: "Lashes" },
-      { name: "Hair" },
       {
-        name: "Tattoos",
+        name: "Head",
       },
       {
-        name: "Sunglasses",
+        name: "Accessory", // Dynamic
       },
-      {
-        name: "Neck",
-      },
-      { name: "Lips" },
-      { name: "Pets" },
     ],
   },
+
   {
-    growEditionSizeTo: 1000,
+    growEditionSizeTo: 1160,
     layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
+      { name: "Background" },
+      { name: "Weapon" }, // Dynamic
+      { name: "Body" },
       {
-        name: "MakeUp",
+        name: "Ears",
       },
       {
         name: "Eyes",
       },
-      { name: "Lashes" },
-      { name: "Hair" },
       {
-        name: "Sunglasses",
+        name: "Head",
       },
-      { name: "Earrings" },
+      { name: "Scar" }, // Dynamic
       {
-        name: "Neck",
+        name: "Accessory", // Dynamic
       },
-      { name: "Masks" },
-      { name: "Pets" },
     ],
   },
+
   {
-    growEditionSizeTo: 1166,
+    growEditionSizeTo: 1276,
     layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
+      { name: "Background" },
+      { name: "Body" },
       {
-        name: "MakeUp",
+        name: "Ears",
+      },
+      {
+        name: "Rings", // Dynamic
       },
       {
         name: "Eyes",
       },
-      { name: "Lashes" },
-      { name: "Hair" },
       {
-        name: "Sunglasses",
+        name: "Head",
       },
-      { name: "Earrings" },
-      {
-        name: "Neck",
-      },
-      { name: "Lips" },
-      { name: "Pets" },
+      { name: "Scar" }, // Dynamic
+      { name: "Lasers" }, // Dynamic
     ],
   },
+
   {
-    growEditionSizeTo: 1332,
+    growEditionSizeTo: 1392,
     layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
+      { name: "Background" },
+      { name: "Body" },
       {
-        name: "MakeUp",
+        name: "Ears",
+      },
+      {
+        name: "Rings", // Dynamic
       },
       {
         name: "Eyes",
       },
-      { name: "Lashes" },
-      { name: "Hair" },
       {
-        name: "Tattoos",
+        name: "Head",
       },
+      { name: "Scar" }, // Dynamic
       {
-        name: "Sunglasses",
+        name: "Accessory", // Dynamic
       },
-      { name: "Earrings" },
-      { name: "Masks" },
-      { name: "Pets" },
     ],
   },
+
   {
-    growEditionSizeTo: 1498,
+    growEditionSizeTo: 1508,
     layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
+      { name: "Background" },
+      { name: "Body" },
       {
-        name: "MakeUp",
+        name: "Ears",
+      },
+      {
+        name: "Rings", // Dynamic
       },
       {
         name: "Eyes",
       },
-      { name: "Lashes" },
-      { name: "Hair" },
       {
-        name: "Tattoos",
+        name: "Head",
       },
+      { name: "Lasers" }, // Dynamic
       {
-        name: "Sunglasses",
+        name: "Accessory", // Dynamic
       },
-      { name: "Earrings" },
-      { name: "Lips" },
-      { name: "Pets" },
     ],
   },
+
   {
-    growEditionSizeTo: 1664,
+    growEditionSizeTo: 1624,
     layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
+      { name: "Background" },
+      { name: "Body" },
       {
-        name: "MakeUp",
+        name: "Ears",
       },
       {
         name: "Eyes",
       },
-      { name: "Lashes" },
-      { name: "Hair" },
       {
-        name: "Tattoos",
+        name: "Head",
       },
-      { name: "Earrings" },
+      { name: "Scar" }, // Dynamic
+      { name: "Lasers" }, // Dynamic
       {
-        name: "Neck",
+        name: "Accessory", // Dynamic
       },
-      { name: "Masks" },
-      { name: "Pets" },
     ],
   },
+
   {
-    growEditionSizeTo: 1830,
+    growEditionSizeTo: 1740,
     layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
+      { name: "Background" },
+      { name: "Weapon" }, // Dynamic
+      { name: "Body" },
       {
-        name: "MakeUp",
+        name: "Ears",
+      },
+      {
+        name: "Rings", // Dynamic
       },
       {
         name: "Eyes",
       },
-      { name: "Lashes" },
-      { name: "Hair" },
       {
-        name: "Tattoos",
+        name: "Head",
       },
-      { name: "Earrings" },
-      {
-        name: "Neck",
-      },
-      { name: "Lips" },
-      { name: "Pets" },
     ],
   },
+
   {
-    growEditionSizeTo: 1996,
+    growEditionSizeTo: 1856,
     layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
+      { name: "Background" },
+      { name: "Weapon" }, // Dynamic
+      { name: "Body" },
       {
-        name: "MakeUp",
+        name: "Ears",
       },
       {
         name: "Eyes",
       },
-      { name: "Lashes" },
-      { name: "Hair" },
       {
-        name: "Tattoos",
+        name: "Head",
       },
       {
-        name: "Sunglasses",
+        name: "Accessory", // Dynamic
       },
-      {
-        name: "Neck",
-      },
-      { name: "Lips" },
     ],
   },
+
   {
-    growEditionSizeTo: 2162,
+    growEditionSizeTo: 1972,
     layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
+      { name: "Background" },
+      { name: "Body" },
       {
-        name: "MakeUp",
+        name: "Ears",
+      },
+      {
+        name: "Rings", // Dynamic
       },
       {
         name: "Eyes",
       },
-      { name: "Lashes" },
-      { name: "Hair" },
       {
-        name: "Tattoos",
+        name: "Head",
       },
-      {
-        name: "Sunglasses",
-      },
-      {
-        name: "Neck",
-      },
-      { name: "Masks" },
+      { name: "Scar" }, // Dynamic
     ],
   },
+
   {
-    growEditionSizeTo: 2328,
+    growEditionSizeTo: 2088,
     layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
+      { name: "Background" },
+      { name: "Body" },
       {
-        name: "MakeUp",
+        name: "Ears",
+      },
+      {
+        name: "Rings", // Dynamic
       },
       {
         name: "Eyes",
       },
-      { name: "Lashes" },
-      { name: "Hair" },
       {
-        name: "Sunglasses",
+        name: "Head",
       },
-      { name: "Earrings" },
-      {
-        name: "Neck",
-      },
-      { name: "Lips" },
+      { name: "Lasers" }, // Dynamic
     ],
   },
+
   {
-    growEditionSizeTo: 2494,
+    growEditionSizeTo: 2204,
     layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
+      { name: "Background" },
+      { name: "Body" },
       {
-        name: "MakeUp",
+        name: "Ears",
+      },
+      {
+        name: "Rings", // Dynamic
       },
       {
         name: "Eyes",
       },
-      { name: "Lashes" },
-      { name: "Hair" },
       {
-        name: "Sunglasses",
+        name: "Head",
       },
-      { name: "Earrings" },
       {
-        name: "Neck",
+        name: "Accessory", // Dynamic
       },
-      { name: "Masks" },
     ],
   },
+
   {
-    growEditionSizeTo: 2660,
+    growEditionSizeTo: 2320,
     layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
+      { name: "Background" },
+      { name: "Body" },
       {
-        name: "MakeUp",
+        name: "Ears",
       },
       {
         name: "Eyes",
       },
-      { name: "Lashes" },
-      { name: "Hair" },
       {
-        name: "Sunglasses",
+        name: "Head",
       },
+      { name: "Lasers" }, // Dynamic
       {
-        name: "Neck",
+        name: "Accessory", // Dynamic
       },
-      { name: "Lips" },
-      { name: "Pets" },
     ],
   },
+
   {
-    growEditionSizeTo: 2826,
+    growEditionSizeTo: 2436,
+
     layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
+      { name: "Background" },
+
+      { name: "Weapon" }, // Dynamic
+
+      { name: "Body" },
+
       {
-        name: "MakeUp",
+        name: "Ears",
       },
+
+      {
+        name: "Rings", // Dynamic
+      },
+
       {
         name: "Eyes",
       },
-      { name: "Lashes" },
-      { name: "Hair" },
+
       {
-        name: "Sunglasses",
+        name: "Head",
       },
+
+      { name: "Scar" }, // Dynamic
+
+      { name: "Flash" }, // Dynamic
+
       {
-        name: "Neck",
+        name: "Accessory", // Dynamic
       },
-      { name: "Masks" },
-      { name: "Pets" },
     ],
   },
+
   {
-    growEditionSizeTo: 2992,
+    growEditionSizeTo: 2552,
+
     layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
+      { name: "Background" },
+
+      { name: "Weapon" }, // Dynamic
+
+      { name: "Body" },
+
       {
-        name: "MakeUp",
+        name: "Ears",
       },
+
+      {
+        name: "Rings", // Dynamic
+      },
+
       {
         name: "Eyes",
       },
-      { name: "Lashes" },
-      { name: "Hair" },
+
       {
-        name: "Tattoos",
+        name: "Head",
       },
-      {
-        name: "Sunglasses",
-      },
-      { name: "Earrings" },
-      { name: "Lips" },
+
+      { name: "Scar" }, // Dynamic
+
+      { name: "Flash" }, // Dynamic
     ],
   },
+
   {
-    growEditionSizeTo: 3158,
+    growEditionSizeTo: 2668,
+
     layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
+      { name: "Background" },
+
+      { name: "Body" },
+
       {
-        name: "MakeUp",
+        name: "Ears",
       },
+
+      {
+        name: "Rings", // Dynamic
+      },
+
       {
         name: "Eyes",
       },
-      { name: "Lashes" },
-      { name: "Hair" },
+
       {
-        name: "Tattoos",
+        name: "Head",
       },
+
+      { name: "Scar" }, // Dynamic
+
+      { name: "Flash" }, // Dynamic
+
       {
-        name: "Sunglasses",
+        name: "Accessory", // Dynamic
       },
-      { name: "Earrings" },
-      { name: "Masks" },
     ],
   },
+
   {
-    growEditionSizeTo: 3324,
+    growEditionSizeTo: 2784,
+
     layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
+      { name: "Background" },
+
+      { name: "Body" },
+
       {
-        name: "MakeUp",
+        name: "Ears",
       },
+
+      {
+        name: "Rings", // Dynamic
+      },
+
       {
         name: "Eyes",
       },
-      { name: "Lashes" },
-      { name: "Hair" },
+
       {
-        name: "Tattoos",
+        name: "Head",
       },
-      {
-        name: "Sunglasses",
-      },
-      { name: "Lips" },
-      { name: "Pets" },
+
+      { name: "Scar" }, // Dynamic
+
+      { name: "Flash" }, // Dynamic
     ],
   },
+
   {
-    growEditionSizeTo: 3490,
+    growEditionSizeTo: 2900,
+
     layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
+      { name: "Background" },
+
+      { name: "Body" },
+
       {
-        name: "MakeUp",
+        name: "Ears",
       },
+
+      {
+        name: "Rings", // Dynamic
+      },
+
       {
         name: "Eyes",
       },
-      { name: "Lashes" },
-      { name: "Hair" },
+
       {
-        name: "Tattoos",
+        name: "Head",
       },
+
+      { name: "Flash" }, // Dynamic
+
       {
-        name: "Sunglasses",
+        name: "Accessory", // Dynamic
       },
-      { name: "Masks" },
-      { name: "Pets" },
     ],
   },
+
   {
-    growEditionSizeTo: 3656,
+    growEditionSizeTo: 3016,
+
     layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
+      { name: "Background" },
+
+      { name: "Body" },
+
       {
-        name: "MakeUp",
+        name: "Ears",
       },
+
       {
         name: "Eyes",
       },
-      { name: "Lashes" },
-      { name: "Hair" },
+
       {
-        name: "Sunglasses",
+        name: "Head",
       },
-      { name: "Earrings" },
-      { name: "Lips" },
-      { name: "Pets" },
+
+      { name: "Scar" }, // Dynamic
+
+      { name: "Flash" }, // Dynamic
+
+      {
+        name: "Accessory", // Dynamic
+      },
     ],
   },
+
   {
-    growEditionSizeTo: 3822,
+    growEditionSizeTo: 3132,
+
     layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
+      { name: "Background" },
+
+      { name: "Body" },
+
       {
-        name: "MakeUp",
+        name: "Ears",
       },
+
+      {
+        name: "Rings", // Dynamic
+      },
+
       {
         name: "Eyes",
       },
-      { name: "Lashes" },
-      { name: "Hair" },
+
       {
-        name: "Sunglasses",
+        name: "Head",
       },
-      { name: "Earrings" },
-      { name: "Masks" },
-      { name: "Pets" },
+
+      { name: "Flash" }, // Dynamic
     ],
   },
+
   {
-    growEditionSizeTo: 3988,
+    growEditionSizeTo: 3141,
+
     layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
+      { name: "Background" },
+
+      { name: "Body" },
+
       {
-        name: "MakeUp",
+        name: "Ears",
       },
+
       {
         name: "Eyes",
       },
-      { name: "Lashes" },
-      { name: "Hair" },
+
       {
-        name: "Sunglasses",
+        name: "Head",
       },
-      { name: "Earrings" },
-      { name: "Lips" },
-      { name: "Pets" },
-    ],
-  },
-  {
-    growEditionSizeTo: 4154,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
+
+      { name: "Flash" }, // Dynamic
+
       {
-        name: "MakeUp",
+        name: "Accessory", // Dynamic
       },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Sunglasses",
-      },
-      { name: "Earrings" },
-      { name: "Masks" },
-      { name: "Pets" },
-    ],
-  },
-  {
-    growEditionSizeTo: 4320,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Tattoos",
-      },
-      { name: "Earrings" },
-      {
-        name: "Neck",
-      },
-      { name: "Lips" },
-    ],
-  },
-  {
-    growEditionSizeTo: 4486,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Tattoos",
-      },
-      { name: "Earrings" },
-      {
-        name: "Neck",
-      },
-      { name: "Masks" },
-    ],
-  },
-  {
-    growEditionSizeTo: 4652,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Tattoos",
-      },
-      {
-        name: "Neck",
-      },
-      { name: "Lips" },
-      { name: "Pets" },
-    ],
-  },
-  {
-    growEditionSizeTo: 4818,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Tattoos",
-      },
-      {
-        name: "Neck",
-      },
-      { name: "Masks" },
-      { name: "Pets" },
-    ],
-  },
-  {
-    growEditionSizeTo: 4984,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      { name: "Earrings" },
-      {
-        name: "Neck",
-      },
-      { name: "Lips" },
-      { name: "Pets" },
-    ],
-  },
-  {
-    growEditionSizeTo: 5150,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      { name: "Earrings" },
-      {
-        name: "Neck",
-      },
-      { name: "Masks" },
-      { name: "Pets" },
-    ],
-  },
-  {
-    growEditionSizeTo: 5316,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Tattoos",
-      },
-      { name: "Earrings" },
-      { name: "Lips" },
-      { name: "Pets" },
-    ],
-  },
-  {
-    growEditionSizeTo: 5482,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Tattoos",
-      },
-      { name: "Earrings" },
-      { name: "Masks" },
-      { name: "Pets" },
-    ],
-  },
-  {
-    growEditionSizeTo: 5648,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Sunglasses",
-      },
-      {
-        name: "Neck",
-      },
-      { name: "Lips" },
-    ],
-  },
-  {
-    growEditionSizeTo: 5814,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Sunglasses",
-      },
-      {
-        name: "Neck",
-      },
-      { name: "Masks" },
-    ],
-  },
-  {
-    growEditionSizeTo: 5980,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Tattoos",
-      },
-      {
-        name: "Sunglasses",
-      },
-      { name: "Lips" },
-    ],
-  },
-  {
-    growEditionSizeTo: 6146,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Tattoos",
-      },
-      {
-        name: "Sunglasses",
-      },
-      { name: "Masks" },
-    ],
-  },
-  {
-    growEditionSizeTo: 6312,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Sunglasses",
-      },
-      { name: "Earrings" },
-      { name: "Lips" },
-    ],
-  },
-  {
-    growEditionSizeTo: 6478,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Sunglasses",
-      },
-      { name: "Earrings" },
-      { name: "Masks" },
-    ],
-  },
-  {
-    growEditionSizeTo: 6644,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Sunglasses",
-      },
-      { name: "Lips" },
-      { name: "Pets" },
-    ],
-  },
-  {
-    growEditionSizeTo: 6810,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Sunglasses",
-      },
-      { name: "Masks" },
-      { name: "Pets" },
-    ],
-  },
-  {
-    growEditionSizeTo: 6976,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Tattoos",
-      },
-      {
-        name: "Neck",
-      },
-      { name: "Lips" },
-    ],
-  },
-  {
-    growEditionSizeTo: 7142,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Tattoos",
-      },
-      {
-        name: "Neck",
-      },
-      { name: "Masks" },
-    ],
-  },
-  {
-    growEditionSizeTo: 7308,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      { name: "Earrings" },
-      {
-        name: "Neck",
-      },
-      { name: "Lips" },
-    ],
-  },
-  {
-    growEditionSizeTo: 7474,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      { name: "Earrings" },
-      {
-        name: "Neck",
-      },
-      { name: "Masks" },
-    ],
-  },
-  {
-    growEditionSizeTo: 7640,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Neck",
-      },
-      { name: "Lips" },
-      { name: "Pets" },
-    ],
-  },
-  {
-    growEditionSizeTo: 7806,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Neck",
-      },
-      { name: "Masks" },
-      { name: "Pets" },
-    ],
-  },
-  {
-    growEditionSizeTo: 7972,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Tattoos",
-      },
-      { name: "Earrings" },
-      { name: "Lips" },
-    ],
-  },
-  {
-    growEditionSizeTo: 8138,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Tattoos",
-      },
-      { name: "Earrings" },
-      { name: "Masks" },
-    ],
-  },
-  {
-    growEditionSizeTo: 8304,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Tattoos",
-      },
-      { name: "Lips" },
-      { name: "Pets" },
-    ],
-  },
-  {
-    growEditionSizeTo: 8470,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Tattoos",
-      },
-      { name: "Masks" },
-      { name: "Pets" },
-    ],
-  },
-  {
-    growEditionSizeTo: 8636,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      { name: "Earrings" },
-      { name: "Lips" },
-      { name: "Pets" },
-    ],
-  },
-  {
-    growEditionSizeTo: 8802,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      { name: "Earrings" },
-      { name: "Masks" },
-      { name: "Pets" },
-    ],
-  },
-  {
-    growEditionSizeTo: 8968,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Sunglasses",
-      },
-      { name: "Lips" },
-    ],
-  },
-  {
-    growEditionSizeTo: 9134,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Sunglasses",
-      },
-      { name: "Masks" },
-    ],
-  },
-  {
-    growEditionSizeTo: 9300,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Neck",
-      },
-      { name: "Lips" },
-    ],
-  },
-  {
-    growEditionSizeTo: 9466,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Neck",
-      },
-      { name: "Masks" },
-    ],
-  },
-  {
-    growEditionSizeTo: 9632,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Tattoos",
-      },
-      { name: "Lips" },
-    ],
-  },
-  {
-    growEditionSizeTo: 9798,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      {
-        name: "Tattoos",
-      },
-      { name: "Masks" },
-    ],
-  },
-  {
-    growEditionSizeTo: 9964,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      { name: "Earrings" },
-      { name: "Lips" },
-    ],
-  },
-  {
-    growEditionSizeTo: 10000,
-    layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skins" },
-      {
-        name: "MakeUp",
-      },
-      {
-        name: "Eyes",
-      },
-      { name: "Lashes" },
-      { name: "Hair" },
-      { name: "Earrings" },
-      { name: "Masks" },
     ],
   },
 ];
@@ -1420,7 +706,16 @@ const background = {
 
 const extraMetadata = {
   royalty: 1000,
-  tags: ["eGirl", "TrustStaking", "Digital", "Girls", "Premium", "Rarity", "VIP", "Unique"]
+  tags: [
+    "eGirl",
+    "TrustStaking",
+    "Digital",
+    "Girls",
+    "Premium",
+    "Rarity",
+    "VIP",
+    "Unique",
+  ],
 };
 
 const rarityDelimiter = "#";
