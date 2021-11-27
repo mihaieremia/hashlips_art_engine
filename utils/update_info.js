@@ -7,8 +7,9 @@ let rawdata = fs.readFileSync(`${basePath}/build/json/_metadata.json`);
 let data = JSON.parse(rawdata);
 
 data.forEach((item, index) => {
-  // delete item.name;
-  // delete item.edition;
+  delete item.name;
+  delete item.image;
+  delete item.edition;
   fs.writeFileSync(
     `${basePath}/build/json/${index+1}.json`,
     JSON.stringify(item, null, 2)

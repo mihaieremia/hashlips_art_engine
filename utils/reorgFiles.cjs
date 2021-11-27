@@ -20,7 +20,7 @@ const reorgFiles = async () => {
             // emptyIDsUnder10k.push(i);
         }
     }
-    if (tmpMetadata.length === 10000) {
+    if (tmpMetadata.length === 1121) {
         writeMetaData(JSON.stringify(tmpMetadata, null, 2));
     }
     // const filesAbove10000 = [];

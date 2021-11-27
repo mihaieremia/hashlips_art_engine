@@ -13,10 +13,10 @@ let traitsCount = {};
 let traitsPerCategoryCount = {};
 
 // fill up rarity chart with occurrences from metadata
-let checkMax = 9;
+let checkMax = 999;
 let mostRare = {};
 data.forEach((element) => {
-  let rarity = element.rarity.avgRarity;
+  let rarity = element.rarity.rarityScore;
   if (rarity < checkMax) {
     mostRare = element;
     checkMax = rarity;

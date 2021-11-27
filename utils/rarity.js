@@ -101,6 +101,9 @@ for (let index = 0; index < _data.length; index++) {
   delete _data[index]['name'];
   delete _data[index]['edition'];
   delete _data[index]['collectionInfo'];
+  delete _data[index]['royalty'];
+  delete _data[index]['image'];
+  delete _data[index]['tags'];
   // console.log(_data[index]['rarity']['rarityScoreNormed'], index + 1)
 }
 fs.writeFileSync(
