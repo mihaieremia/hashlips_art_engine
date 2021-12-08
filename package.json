@@ -21,6 +21,7 @@
     "getRarity": "node utils/getRarity.js",
     "pixelate": "node utils/pixelate.js",
     "update_info": "node utils/update_info.js",
+    "getWinners": "node utils/getWinners.js",
     "preview_gif": "node utils/preview_gif.js"
   },
   "author": "Daniel Eugene Botha (HashLips)",

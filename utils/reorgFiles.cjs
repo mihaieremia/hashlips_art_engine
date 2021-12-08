@@ -12,11 +12,16 @@ const reorgFiles = async () => {
     for (i = 1; i < 10001; i++) {
         try {
             await fs.promises.access(`${basePath}/build/json/${i}.json`);
-            let OLDJSON = await fs.promises.readFile(`${basePath}/build/json/${i}.json`, "ascii");
-            tmpMetadata.push(JSON.parse(OLDJSON));
+            let OLDJSON = await fs.promises.readFile(`${basePath}/build/json/${i}.json`);
+            // console.log(OLDJSON);
+            try {
+                tmpMetadata.push(JSON.parse(OLDJSON));
+            } catch (error) {
+                console.log(i);
+            }
             // console.log(`File ${i}.json exists`);
         } catch (error) {
-            console.log(`File ${i}.json is missing`);
+            console.log(error);
             // emptyIDsUnder10k.push(i);
         }
     }
