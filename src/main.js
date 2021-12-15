@@ -527,7 +527,7 @@ const isMixValid = (layers) => {
     countTrue += 1;
   } else if (["fur14", "fur15", "fur16", "fur19"].includes(structJS["Fur"])) {
     countTrue += 0;
-  } else if (["fur18"].includes(structJS["Fur"]) && structJS["Accessories"].includes("head") && ["head8", "head11"].includes(structJS["Accessories"])) {
+  } else if (["fur18"].includes(structJS["Fur"]) && structJS["Accessories"].includes("head") && ["head2"].includes(structJS["Accessories"])) {
     countTrue += 1;
   } else if (["fur18"].includes(structJS["Fur"])) {
     countTrue += 0;
