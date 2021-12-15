@@ -71,17 +71,9 @@ for (let index = 0; index < _data.length; index++) {
   let rarityScoreNormed = 0;
   for (let iA = 0; iA < el['attributes'].length; iA++) {
     const at = el['attributes'][iA];
-    // delete _data[index]["attributes"][iA].attributeOccurrence;
-    // delete _data[index]["attributes"][iA].attributeFrequency;
-    // delete _data[index]["attributes"][iA].attributeRarity;
-    // delete _data[index]["attributes"][iA].traitOccurance;
-    // delete _data[index]["attributes"][iA].traitFrequency;
-    // delete _data[index]["attributes"][iA].traitOccurancePercentage;
-    // delete _data[index]["attributes"][iA].attributeRarityNormed;
     traitsPerCategoryCount[at.trait_type][at.value] = {...traitMap[at.trait_type][at.value]}
     const trait_rarity_normed = traitMap[at.trait_type][at.value].attributeRarity * (get_avg_trait_per_cat / el['attributes'].length);
     traitMap[at.trait_type][at.value].attributeRarityNormed = trait_rarity_normed;
-    // _data[index].attributes[iA] = { ..._data[index].attributes[iA], ...traitMap[at.trait_type][at.value] };
     avgRarity += traitMap[at.trait_type][at.value].attributeFrequency;
     statRarity = statRarity.multipliedBy(traitMap[at.trait_type][at.value].attributeFrequency);
     rarityScore += traitMap[at.trait_type][at.value].attributeRarity;
@@ -93,16 +85,14 @@ for (let index = 0; index < _data.length; index++) {
   _data[index]['rarity'] = { ..._data[index]['rarity'], rarityScore: parseFloat((rarityScore).toFixed(6)) };
   _data[index]['rarity'] = { ..._data[index]['rarity'], rarityScoreNormed: parseFloat((rarityScoreNormed).toFixed(6)) };
   _data[index]['rarity'] = { ..._data[index]['rarity'], usedTraitsCount: el['attributes'].length };
-  // _data[index]['rarity'] = { ..._data[index]['rarity'], collectionSize: editionSize };
-  // _data[index]['rarity'] = { ..._data[index]['rarity'], collectionTraitsCount: Object.keys(categoryCount).length };
   _data[index]['createdAt'] = _data[index]['date'];
   delete _data[index]['image'];
   delete _data[index]['date'];
   delete _data[index]['name'];
   delete _data[index]['edition'];
   delete _data[index]['collectionInfo'];
-  // console.log(_data[index]['rarity']['rarityScoreNormed'], index + 1)
 }
+
 fs.writeFileSync(
   `${basePath}/build/json/collection.json`,
   JSON.stringify(traitsPerCategoryCount, null, 2)

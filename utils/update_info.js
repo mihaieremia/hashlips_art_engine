@@ -6,17 +6,19 @@ let rawdata = fs.readFileSync(`${basePath}/build/json/_metadata.json`);
 let data = JSON.parse(rawdata);
 
 data.forEach((item, index) => {
-  delete item.name;
+  // delete item.name;
   delete item.image;
   delete item.edition;
   delete item.date;
   delete item.fee_recipient;
   delete item.seller_fee_basis_points;
   delete item.image;
-  delete item.image;
+  delete item.tags;
+  delete item.royalty;
   delete item.external_url;
+  // delete item.description;
   item.compiler = "Trust Staking";
-  // item.description = "Being a jaguar is the advantage of joining one of the most private groups on the blockchain!"
+  // item.description = "Unique NFT collection of 10.000 avatars depicting the Dacian Draco that was the standard ensign of troops of the ancient Dacian people."
   fs.writeFileSync(
     `${basePath}/build/json/${index + 1}.json`,
     JSON.stringify(item, null, 2)

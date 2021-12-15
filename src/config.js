@@ -25,24 +25,20 @@ const solanaMetadata = {
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 10000,
+    growEditionSizeTo: 100,
     layersOrder: [
       { name: "Background" },
-      { name: "Pole" }, // Dynamic
-      { name: "Head" },
+      { name: "Fur" }, // Dynamic
+      { name: "Outfits" },
       {
-        name: "Mouth",
+        name: "Eyes",
       },
       {
-        name: "Body", // Dynamic
+        name: "Mouth", // Dynamic
       },
       {
-        name: "Scales",
+        name: "Accessories",
       },
-      {
-        name: "Fur",
-      },
-      { name: "Ornaments" },
     ],
   },
 ];

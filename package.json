@@ -15,6 +15,7 @@
     "build": "node index.js",
     "generate": "node index.js",
     "rarity": "node utils/rarity.js",
+    "addNames": "node utils/addNames.js",
     "preview": "node utils/preview.js",
     "uploadNFT": "node utils/uploadNFTs.cjs",
     "reorg": "node utils/reorgFiles.cjs",
