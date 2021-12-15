@@ -25,7 +25,7 @@ const solanaMetadata = {
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 100,
+    growEditionSizeTo: 8888,
     layersOrder: [
       { name: "Background" },
       { name: "Fur" }, // Dynamic
@@ -100,7 +100,7 @@ const extraMetadata = {
 
 const rarityDelimiter = "#";
 
-const uniqueDnaTorrance = 10000;
+const uniqueDnaTorrance = 100000;
 
 const preview = {
   thumbPerRow: 100,
