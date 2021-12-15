@@ -5,10 +5,9 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "Elrond Monkeys";
-const description =
-  "The unique Elrond Monkeys NFT Collection by Trust Staking!";
-const baseUri = "ipfs://NewUriToReplace";
+const namePrefix = "Wolfs";
+const description = "Wolfs";
+const baseUri = "";
 
 const solanaMetadata = {
   symbol: "YC",
@@ -25,7 +24,7 @@ const solanaMetadata = {
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 8888,
+    growEditionSizeTo: 56,
     layersOrder: [
       { name: "Background" },
       { name: "Fur" }, // Dynamic
@@ -84,19 +83,7 @@ const background = {
   default: "#000000",
 };
 
-const extraMetadata = {
-  royalty: 1000,
-  tags: [
-    "eGirl",
-    "TrustStaking",
-    "Digital",
-    "Girls",
-    "Premium",
-    "Rarity",
-    "VIP",
-    "Unique",
-  ],
-};
+const extraMetadata = {};
 
 const rarityDelimiter = "#";
 
