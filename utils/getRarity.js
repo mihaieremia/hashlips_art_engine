@@ -7,11 +7,11 @@ let rawdata = fs.readFileSync(`${basePath}/build/json/_metadata.json`);
 let data = JSON.parse(rawdata);
 
 // fill up rarity chart with occurrences from metadata
-let checkMax = 0;
+let checkMax = 9999;
 let mostRare = {};
 data.forEach((element) => {
   let rarity = element.rarity.rarityScore;
-  if (rarity > checkMax) {
+  if (rarity < checkMax) {
     mostRare = element;
     checkMax = rarity;
   }
