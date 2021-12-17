@@ -435,137 +435,174 @@ const startCreating = async () => {
   }
   writeMetaData(JSON.stringify(metadataList, null, 2));
 };
+const isBackgroundFurValid = (structJS) => {
+  // Background - Fur
+  let countTrue;
+  if (structJS["Fur"] === "fur14" && ["background0"].includes(structJS["Background"])) {
+    return false;
+  } else if (structJS["Fur"] === "fur20" && ["background0"].includes(structJS["Background"])) {
+    return true;
+  } else if (structJS["Fur"] === "fur20" && !["background0"].includes(structJS["Background"])) {
+    return false;
+  }
+  else if (structJS["Fur"] === "fur15" && ["background3", "background5", "background8"].includes(structJS["Background"])) {
+    return false;
+  }
+  else if (structJS["Fur"] === "fur18" && ["background3", "background7"].includes(structJS["Background"])) {
+    return false;
+  }
+  else if (structJS["Fur"] === "fur19" && ["background8"].includes(structJS["Background"])) {
+    return false;
+  } else {
+    return true;
+  }
+};
+const isBackgroundOutfitsValid = (structJS) => {
+  if (structJS["Outfits"] === undefined) {
+    return true;
+  }
+  // Background - Outfits
+  if (structJS["Background"] === "background8" && ["outfit15", "outfit27", "outfit38", "outfit41"].includes(structJS["Outfits"])) {
+    return false;
+  } else {
+    return true;
+  }
+};
+const isMouthBackgroundValid = (structJS) => {
+  // Background - Outfits
+  if (["mouth13", "mouth14", "mouth15", " mouth16", "mouth17", "mouth18"].includes(structJS["Mouth"]) && ["background5"].includes(structJS["Background"])) {
+    return true;
+  } else if (["mouth13", "mouth14", "mouth15", " mouth16", "mouth17", "mouth18"].includes(structJS["Mouth"]) && !["background5"].includes(structJS["Background"])) {
+    return false;
+  } else {
+    return true;
+  }
+};
+const isOutfitFurGeneralValid = (structJS) => {
+  if (structJS["Outfits"] === undefined) {
+    return true;
+  }
+  // Background - Outfits
+  if (["outfit1", "outfit2", "outfit3", " outfit7", "outfit9", "outfit10", "outfit11", "outfit12", "outfit13", "outfit14", "outfit16", "outfit18", "outfit19", "outfit20", "outfit26", "outfit28", "outfit30", "outfit40"].includes(structJS["Outfits"]) && ["fur0", "fur1", "fur2", "fur3", "fur4", "fur5", "fur6", "fur7", "fur8", "fur9", "fur10", "fur11", "fur12", "fur13", "fur14", "fur15", "fur16", "fur17", "fur18", "fur19", "fur20"].includes(structJS["Fur"])) {
+    return true;
+  } else if (["outfit1", "outfit2", "outfit3", " outfit7", "outfit9", "outfit10", "outfit11", "outfit12", "outfit13", "outfit14", "outfit16", "outfit18", "outfit19", "outfit20", "outfit26", "outfit28", "outfit30", "outfit40"].includes(structJS["Outfits"]) && !["fur0", "fur1", "fur2", "fur3", "fur4", "fur5", "fur6", "fur7", "fur8", "fur9", "fur10", "fur11", "fur12", "fur13", "fur14", "fur15", "fur16", "fur17", "fur18", "fur19", "fur20"].includes(structJS["Fur"])) {
+    return false;
+  } else if (["outfit4", "outfit5", "outfit6", " outfit8", "outfit15", "outfit17", "outfit21", "outfit22", "outfit23", "outfit24", "outfit25", "outfit27", "outfit29", "outfit32", "outfit33", "outfit34", "outfit35", "outfit36", "outfit37", "outfit38", "outfit39", "outfit41"].includes(structJS["Outfits"]) && ["fur0", "fur1", "fur2", "fur3", "fur4", "fur5", "fur6", "fur7"].includes(structJS["Fur"])) {
+    return true;
+  } else if (["outfit4", "outfit5", "outfit6", " outfit8", "outfit15", "outfit17", "outfit21", "outfit22", "outfit23", "outfit24", "outfit25", "outfit27", "outfit29", "outfit32", "outfit33", "outfit34", "outfit35", "outfit36", "outfit37", "outfit38", "outfit39", "outfit41"].includes(structJS["Outfits"]) && !["fur0", "fur1", "fur2", "fur3", "fur4", "fur5", "fur6", "fur7"].includes(structJS["Fur"])) {
+    return false
+  }
+};
+const isOutfitFurSpecificValid = (structJS) => {
+  if (structJS["Outfits"] === undefined) {
+    return true;
+  }
+  // Background - Outfits
+  if (["fur5", "fur7", "fur8"].includes(structJS["Fur"]) && structJS["Outfits"] === "outfit12") {
+    return false;
+  } else if (["fur10"].includes(structJS["Fur"]) && structJS["Outfits"] === "outfit30") {
+    return false;
+  } else if (["fur14"].includes(structJS["Fur"]) && ["outfit3", "outfit10", "outfit11", "outfit14", "outfit19", "outfit20"].includes(structJS["Outfits"])) {
+    return true;
+  } else if (["fur14"].includes(structJS["Fur"]) && !["outfit3", "outfit10", "outfit11", "outfit14", "outfit19", "outfit20"].includes(structJS["Outfits"])) {
+    return false;
+  } else if (["fur15", "fur16", "fur19"].includes(structJS["Fur"]) && ["outfit14", "outfit16", "outfit18", "outfit26"].includes(structJS["Outfits"])) {
+    return true;
+  } else if (["fur15", "fur16", "fur19"].includes(structJS["Fur"]) && !["outfit14", "outfit16", "outfit18", "outfit26"].includes(structJS["Outfits"])) {
+    return false;
+  } else if (["fur20"].includes(structJS["Fur"]) && ["outfit14", "outfit16", "outfit18"].includes(structJS["Outfits"])) {
+    return true;
+  } else if (["fur20"].includes(structJS["Fur"]) && !["outfit14", "outfit16", "outfit18"].includes(structJS["Outfits"])) {
+    return false;
+  } else if (["fur17"].includes(structJS["Fur"]) && ["outfit1", "outfit2", "outfit3", "outfit7", "outfit9", "outfit10", "outfit11", "outfit12", "outfit13", "outfit14", "outfit16", "outfit19", "outfit20", "outfit28", "outfit30"].includes(structJS["Outfits"])) {
+    return true;
+  } else if (["fur17"].includes(structJS["Fur"]) && !["outfit1", "outfit2", "outfit3", "outfit7", "outfit9", "outfit10", "outfit11", "outfit12", "outfit13", "outfit14", "outfit16", "outfit19", "outfit20", "outfit28", "outfit30"].includes(structJS["Outfits"])) {
+    return false;
+  } else if (["fur18"].includes(structJS["Fur"]) && ["outfit2", "outfit10", "outfit13", "outfit30", "outfit40"].includes(structJS["Outfits"])) {
+    return true;
+  } else if (["fur18"].includes(structJS["Fur"]) && !["outfit2", "outfit10", "outfit13", "outfit30", "outfit40"].includes(structJS["Outfits"])) {
+    return false;
+  }
+  else {
+    return true;
+  }
+};
+const isFurMounthValid = (structJS) => {
+  if (["fur17"].includes(structJS["Fur"]) && ["mouth0", "mouth3", "mouth19", "mouth20", "mouth21", "mouth22", "mouth23", "mouth24", "mouth25"].includes(structJS["Mouth"])) {
+    return true;
+  } else if (["fur17"].includes(structJS["Fur"]) && !["mouth0", "mouth3", "mouth19", "mouth20", "mouth21", "mouth22", "mouth23", "mouth24", "mouth25"].includes(structJS["Mouth"])) {
+    return false;
+  } else {
+    return true;
+  }
+}
+const isFurEyesValid = (structJS) => {
+  if (["fur8", "fur9", "fur10", "fur11"].includes(structJS["Fur"]) && ["eyes3", "eyes8", "eyes20", "eyes21"].includes(structJS["Eyes"])) {
+    return false;
+  } else if (["fur17"].includes(structJS["Fur"]) && ["eyes3", "eyes8", "eyes20", "eyes21", "eyes33"].includes(structJS["Eyes"])) {
+    return false;
+  } else if (["fur18"].includes(structJS["Fur"]) && ["eyes31", "eyes32", "eyes33"].includes(structJS["Eyes"])) {
+    return false;
+  } else {
+    return true;
+  }
+}
+const isFurAccessoriesValid = (structJS) => {
+  if (structJS["Accessories"] === undefined) {
+    return true;
+  }
+  if (["fur14", "fur15", "fur16", "fur19"].includes(structJS["Fur"]) && structJS["Accessories"].includes("ear") && ["ear1", "ear2", "ear3", "ear4", "ear5", "ear6", "ear7", "ear8", "ear9", "ear11", "ear12"].includes(structJS["Accessories"])) {
+    return true;
+  } else if (["fur14", "fur15", "fur16", "fur19"].includes(structJS["Fur"]) && structJS["Accessories"].includes("ear") && !["ear1", "ear2", "ear3", "ear4", "ear5", "ear6", "ear7", "ear8", "ear9", "ear11", "ear12"].includes(structJS["Accessories"])) {
+    return false;
+  } else if (["fur14", "fur15", "fur16", "fur19"].includes(structJS["Fur"]) && !structJS["Accessories"].includes("ear")) {
+    return false;
+  } else if (["fur18"].includes(structJS["Fur"]) && ((structJS["Accessories"].includes("head") && ["head2"].includes(structJS["Accessories"])
+    || (structJS["Accessories"].includes("ear") && ["ear6", "ear7"].includes(structJS["Accessories"]))))) {
+    return true;
+  } else if (["fur18"].includes(structJS["Fur"])) {
+    return false;
+  } else if (["fur17"].includes(structJS["Fur"]) && structJS["Accessories"].includes("head") && ["head8", "head11"].includes(structJS["Accessories"])) {
+    return true;
+  } else if (["fur17"].includes(structJS["Fur"])) {
+    return true;
+  } else if (["fur8", "fur9", "fur10", "fur11"].includes(structJS["Fur"]) && structJS["Accessories"].includes("head") && ["head1", "head2"].includes(structJS["Accessories"])) {
+    return false;
+  } else if (structJS["Accessories"].includes("hair") && ["hair14", "hair15", "hair16"].includes(structJS["Accessories"]) && ["fur0", "fur1", "fur2", " fur3", "fur4", "fur5", "fur6", "fur7"].includes(structJS["Fur"])) {
+    return true;
+  } else if (structJS["Accessories"].includes("hair") && ["hair14", "hair15", "hair16"].includes(structJS["Accessories"]) && !["fur0", "fur1", "fur2", " fur3", "fur4", "fur5", "fur6", "fur7"].includes(structJS["Fur"])) {
+    return false;
+  } else {
+    return true;
+  }
+}
+const isEyesAccessoriesValid = (structJS) => {
+  if (structJS["Accessories"] === undefined) {
+    return true;
+  }
+  if (["eyes33"].includes(structJS["Eyes"]) && structJS["Accessories"].includes("ear")) {
+    return true;
+  } else if (["eyes33"].includes(structJS["Eyes"]) && structJS["Accessories"].includes("head")) {
+    return false;
+  } else {
+    return true;
+  }
+}
 const isMixValid = (layers) => {
   let structJS = {};
   for (let i = 0; i < layers.length; i++) {
     const layer = layers[i];
     structJS = { ...structJS, [layer.name]: layer.selectedElement.name }
   }
-  let countTrue = 0;
-  // Background - Fur
-  if (structJS["Fur"] === "fur18" && ["background3", "background7"].includes(structJS["Background"])) {
-    countTrue += 0;
-  } else if (structJS["Fur"] === "fur18") {
-    countTrue += 1;
-  } else if (structJS["Fur"] === "fur20" && ["background0"].includes(structJS["Background"])) {
-    countTrue += 1;
-  } else if (structJS["Fur"] === "fur20") {
-    countTrue += 0;
-  }
-  else if (structJS["Fur"] === "fur6" && ["background8"].includes(structJS["Background"])) {
-    countTrue += 0;
-  }
-  else if (structJS["Fur"] === "fur15" && ["background3", "background5", "background8"].includes(structJS["Background"])) {
-    countTrue += 0;
-  }
-  else if (structJS["Fur"] === "fur14" && ["background0"].includes(structJS["Background"])) {
-    countTrue += 0;
-  }
-  else if (structJS["Fur"] === "fur19" && ["background8"].includes(structJS["Background"])) {
-    countTrue += 0;
-  } else {
-    countTrue += 1;
-  }
-  // Background - Outfits
-  if (structJS["Background"] === "background8" && ["outfit15", "outfit27", "outfit38", "outfit41"].includes(structJS["Outfits"])) {
-    countTrue += 0;
-  } else {
-    countTrue += 1;
-  }
-  // Mouth - Background
-  if (["mouth13", "mouth14", "mouth15", " mouth16", "mouth17", "mouth18"].includes(structJS["Mouth"]) && ["background5"].includes(structJS["Background"])) {
-    countTrue += 1;
-  } else {
-    countTrue += 1;
-  }
-  // Outfit - Fur (General)
-  if (["outfit1", "outfit2", "outfit3", " outfit7", "outfit9", "outfit10", "outfit11", "outfit12", "outfit13", "outfit14", "outfit16", "outfit18", "outfit19", "outfit20", "outfit26", "outfit28", "outfit30", "outfit40"].includes(structJS["Outfits"]) && ["fur0", "fur1", "fur2", "fur3", "fur4", "fur5", "fur6", "fur7", "fur8", "fur9", "fur10", "fur11"].includes(structJS["Fur"])) {
-    countTrue += 1;
-  } else if (["outfit1", "outfit2", "outfit3", " outfit7", "outfit9", "outfit10", "outfit11", "outfit12", "outfit13", "outfit14", "outfit16", "outfit18", "outfit19", "outfit20", "outfit26", "outfit28", "outfit30", "outfit40"].includes(structJS["Outfits"])) {
-    countTrue += 0;
-  } else if (["outfit4", "outfit5", "outfit6", " outfit8", "outfit15", "outfit17", "outfit21", "outfit22", "outfit23", "outfit24", "outfit25", "outfit27", "outfit29", "outfit32", "outfit33", "outfit34", "outfit35", "outfit36", "outfit37", "outfit38", "outfit39", "outfit41"].includes(structJS["Outfits"]) && ["fur0", "fur1", "fur2", "fur3", "fur4", "fur5", "fur6", "fur7"].includes(structJS["Fur"])) {
-    countTrue += 1;
-  } else if (["outfit4", "outfit5", "outfit6", " outfit8", "outfit15", "outfit17", "outfit21", "outfit22", "outfit23", "outfit24", "outfit25", "outfit27", "outfit29", "outfit32", "outfit33", "outfit34", "outfit35", "outfit36", "outfit37", "outfit38", "outfit39", "outfit41"].includes(structJS["Outfits"])) {
-    countTrue += 0;
-  } else if (["fur5", "fur7", "fur8"].includes(structJS["Fur"]) && structJS["Outfits"] === "outfit12") {
-    countTrue += 0;
-  } else if (["fur10"].includes(structJS["Fur"]) && structJS["Outfits"] === "outfit30") {
-    countTrue += 0;
-  } else if (["fur14"].includes(structJS["Fur"]) && ["outfit3", "outfit5", "outfit10", "outfit11", "outfit14", "outfit19", "outfit20",].includes(structJS["Outfits"])) {
-    countTrue += 1;
-  } else if (["fur14"].includes(structJS["Fur"])) {
-    countTrue += 0;
-  } else if (["fur15", "fur16", "fur19"].includes(structJS["Fur"]) && ["outfit14", "outfit16", "outfit18", "outfit26"].includes(structJS["Outfits"])) {
-    countTrue += 1;
-  } else if (["fur15", "fur16", "fur19"].includes(structJS["Fur"])) {
-    countTrue += 0;
-  } else if (["fur20"].includes(structJS["Fur"]) && ["outfit14", "outfit16", "outfit18"].includes(structJS["Outfits"])) {
-    countTrue += 1;
-  } else if (["fur20"].includes(structJS["Fur"])) {
-    countTrue += 0;
-  } else if (["fur17"].includes(structJS["Fur"]) && ["outfit18", "outfit26", "outfit40"].includes(structJS["Outfits"])) {
-    countTrue += 0;
-  } else if (["fur18"].includes(structJS["Fur"]) && ["outfit2", "outfit6", "outfit10", "outfit13", "outfit17", "outfit30", "outfit37", "outfit40"].includes(structJS["Outfits"])) {
-    countTrue += 1;
-  } else if (["fur18"].includes(structJS["Fur"])) {
-    countTrue += 0;
-  }
-  else {
-    countTrue += 1;
-  }
-  //Fur - Mouth
-  if (["fur17"].includes(structJS["Fur"]) && ["mouth0", "mouth3", "mouth19", "mouth20", "mouth21", "mouth22", "mouth23", "mouth24", "mouth25"].includes(structJS["Mouth"])) {
-    countTrue += 1;
-  } else if (["fur17"].includes(structJS["Fur"])) {
-    countTrue += 0;
-  } else {
-    countTrue += 1;
-  }
-  // Fur - Eyes
-  if (["fur8", "fur9", "fur10", "fur11"].includes(structJS["Fur"]) && ["eyes3", "eyes8", "eyes20", "eyes21"].includes(structJS["Eyes"])) {
-    countTrue += 0;
-  } else if (["fur17"].includes(structJS["Fur"]) && ["eyes3", "eyes8", "eyes20", "eyes21"].includes(structJS["Eyes"])) {
-    countTrue += 0;
-  } else if (["fur18"].includes(structJS["Fur"]) && ["eyes31", "eyes32", "eyes33"].includes(structJS["Eyes"])) {
-    countTrue += 0;
-  } else if (["fur17"].includes(structJS["Fur"]) && ["eyes31", "eyes32", "eyes33"].includes(structJS["Eyes"])) {
-    countTrue += 0;
-  } else {
-    countTrue += 1;
-  }
-  //Fur - Ear and Head Accessories 
-  if (["fur14", "fur15", "fur16", "fur19"].includes(structJS["Fur"]) && !structJS["Accessories"].includes("ear")) {
-    countTrue += 0;
-  } else if (["fur14", "fur15", "fur16", "fur19"].includes(structJS["Fur"]) && structJS["Accessories"].includes("ear") && ["ear1", "ear2", "ear3", "ear4", "ear5", "ear6", "ear7", "ear8", "ear9", "ear11", "ear12"].includes(structJS["Accessories"])) {
-    countTrue += 1;
-  } else if (["fur14", "fur15", "fur16", "fur19"].includes(structJS["Fur"])) {
-    countTrue += 0;
-  } else if (["fur18"].includes(structJS["Fur"]) && ((structJS["Accessories"].includes("head") && ["head2"].includes(structJS["Accessories"])
-    || (structJS["Accessories"].includes("ear") && ["ear6", "ear7"].includes(structJS["Accessories"]))))) {
-    countTrue += 1;
-  } else if (["fur18"].includes(structJS["Fur"])) {
-    countTrue += 0;
-  } else if (["fur17"].includes(structJS["Fur"]) && structJS["Accessories"].includes("head") && ["head8", "head11"].includes(structJS["Accessories"])) {
-    countTrue += 1;
-  } else if (["fur17"].includes(structJS["Fur"])) {
-    countTrue += 0;
-  } else if (["fur8", "fur9", "fur10", "fur11"].includes(structJS["Fur"]) && structJS["Accessories"].includes("head") && ["head1", "head2"].includes(structJS["Accessories"])) {
-    countTrue += 0;
-  } else if (["fur8", "fur9", "fur10", "fur11"].includes(structJS["Fur"])) {
-    countTrue += 1;
-  } else if (structJS["Accessories"].includes("hair") && ["hair14", "hair15", "hair16"].includes(structJS["Accessories"]) && ["outfit4", "outfit5", "outfit6", " outfit8", "outfit15", "outfit17", "outfit21", "outfit22", "outfit23", "outfit24", "outfit25", "outfit27", "outfit29", "outfit32", "outfit33", "outfit34", "outfit35", "outfit36", "outfit37", "outfit38", "outfit39", "outfit41"].includes(structJS["Outfits"])) {
-    countTrue += 1;
-  } else if (["outfit4", "outfit5", "outfit6", " outfit8", "outfit15", "outfit17", "outfit21", "outfit22", "outfit23", "outfit24", "outfit25", "outfit27", "outfit29", "outfit32", "outfit33", "outfit34", "outfit35", "outfit36", "outfit37", "outfit38", "outfit39", "outfit41"].includes(structJS["Outfits"])) {
-    countTrue += 0;
-  } else {
-    countTrue += 1;
-  }
-  if (countTrue === 7) {
-    if (structJS["Fur"] === "fur18") {
-      console.log(structJS);
-    }
-    return true;
-  }
-  return false;
+
+  return isEyesAccessoriesValid(structJS)
+    && isFurAccessoriesValid(structJS)
+    && isFurEyesValid(structJS)
+    && isFurMounthValid(structJS)
+    && isOutfitFurSpecificValid(structJS)
+    && isOutfitFurGeneralValid(structJS)
+    && isMouthBackgroundValid(structJS)
+    && isBackgroundOutfitsValid(structJS)
+    && isBackgroundFurValid(structJS);
 };
 module.exports = { startCreating, buildSetup, getElements };

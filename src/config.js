@@ -24,6 +24,36 @@ const solanaMetadata = {
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
+    growEditionSizeTo: 3333,
+    layersOrder: [
+      { name: "Background" },
+      { name: "Fur" }, // Dynamic
+      { name: "Outfits" },
+      {
+        name: "Eyes",
+      },
+      {
+        name: "Mouth", // Dynamic
+      },
+    ],
+  },
+  {
+    growEditionSizeTo: 4833,
+    layersOrder: [
+      { name: "Background" },
+      { name: "Fur" }, // Dynamic
+      {
+        name: "Eyes",
+      },
+      {
+        name: "Mouth", // Dynamic
+      },
+      {
+        name: "Accessories",
+      },
+    ],
+  },
+   {
     growEditionSizeTo: 8888,
     layersOrder: [
       { name: "Background" },
@@ -87,7 +117,7 @@ const extraMetadata = {};
 
 const rarityDelimiter = "#";
 
-const uniqueDnaTorrance = 100000;
+const uniqueDnaTorrance = 1000000;
 
 const preview = {
   thumbPerRow: 100,
