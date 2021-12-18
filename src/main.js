@@ -502,9 +502,9 @@ const isOutfitFurSpecificValid = (structJS) => {
     return false;
   } else if (["fur10"].includes(structJS["Fur"]) && structJS["Outfits"] === "outfit30") {
     return false;
-  } else if (["fur14"].includes(structJS["Fur"]) && ["outfit3", "outfit10", "outfit11", "outfit14", "outfit19", "outfit20"].includes(structJS["Outfits"])) {
+  } else if (["fur14"].includes(structJS["Fur"]) && ["outfit3", "outfit10", "outfit11", "outfit19", "outfit20"].includes(structJS["Outfits"])) {
     return true;
-  } else if (["fur14"].includes(structJS["Fur"]) && !["outfit3", "outfit10", "outfit11", "outfit14", "outfit19", "outfit20"].includes(structJS["Outfits"])) {
+  } else if (["fur14"].includes(structJS["Fur"]) && !["outfit3", "outfit10", "outfit11", "outfit19", "outfit20"].includes(structJS["Outfits"])) {
     return false;
   } else if (["fur15", "fur16", "fur19"].includes(structJS["Fur"]) && ["outfit14", "outfit16", "outfit18", "outfit26"].includes(structJS["Outfits"])) {
     return true;
@@ -582,7 +582,9 @@ const isEyesAccessoriesValid = (structJS) => {
   }
   if (["eyes33"].includes(structJS["Eyes"]) && structJS["Accessories"].includes("ear")) {
     return true;
-  } else if (["eyes33"].includes(structJS["Eyes"]) && structJS["Accessories"].includes("head")) {
+  } else if (["eyes33"].includes(structJS["Eyes"])) {
+    return false;
+  } else if (["eyes26"].includes(structJS["Eyes"]) && ["head2"].includes(structJS["Accessories"])) {
     return false;
   } else {
     return true;
