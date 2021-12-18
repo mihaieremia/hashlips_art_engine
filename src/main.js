@@ -565,7 +565,7 @@ const isFurAccessoriesValid = (structJS) => {
   } else if (["fur17"].includes(structJS["Fur"]) && structJS["Accessories"].includes("head") && ["head8", "head11"].includes(structJS["Accessories"])) {
     return true;
   } else if (["fur17"].includes(structJS["Fur"])) {
-    return true;
+    return false;
   } else if (["fur8", "fur9", "fur10", "fur11"].includes(structJS["Fur"]) && structJS["Accessories"].includes("head") && ["head1", "head2"].includes(structJS["Accessories"])) {
     return false;
   } else if (structJS["Accessories"].includes("hair") && ["hair14", "hair15", "hair16"].includes(structJS["Accessories"]) && ["fur0", "fur1", "fur2", " fur3", "fur4", "fur5", "fur6", "fur7"].includes(structJS["Fur"])) {
