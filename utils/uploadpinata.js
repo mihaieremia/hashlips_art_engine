@@ -19,14 +19,6 @@ const pinDirectoryToIPFS = (pinataApiKey, pinataSecretApiKey) => {
             });
         });
 
-        const metadata = JSON.stringify({
-            name: 'testname',
-            keyvalues: {
-                exampleKey: 'exampleValue'
-            }
-        });
-        data.append('pinataMetadata', metadata);
-
         return axios
             .post(url, data, {
                 maxBodyLength: 'Infinity', //this is needed to prevent axios from erroring out with large directories

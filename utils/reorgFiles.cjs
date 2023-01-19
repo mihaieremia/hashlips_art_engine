@@ -9,10 +9,10 @@ const reorgFiles = async () => {
 
     const emptyIDsUnder10k = [];
     const tmpMetadata = [];
-    for (i = 1; i < 3006; i++) {
+    for (i = 1; i <= 7878; i++) {
         try {
-            await fs.promises.access(`${basePath}/build/json/${i}.json`);
-            let OLDJSON = await fs.promises.readFile(`${basePath}/build/json/${i}.json`);
+            await fs.promises.access(`/Users/truststaking/MEGAsync Downloads/brawl/metadata/${i}.json`);
+            let OLDJSON = await fs.promises.readFile(`/Users/truststaking/MEGAsync Downloads/brawl/metadata/${i}.json`);
             // console.log(OLDJSON);
             try {
                 tmpMetadata.push(JSON.parse(OLDJSON));
@@ -25,7 +25,7 @@ const reorgFiles = async () => {
             // emptyIDsUnder10k.push(i);
         }
     }
-    if (tmpMetadata.length === 3005) {
+    if (tmpMetadata.length === 7878) {
         writeMetaData(JSON.stringify(tmpMetadata, null, 2));
     }
     // const filesAbove10000 = [];
