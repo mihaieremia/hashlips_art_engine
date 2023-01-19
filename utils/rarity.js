@@ -8,8 +8,34 @@ let data = JSON.parse(rawdata);
 let editionSize = data.length;
 
 
-let categoryCount = {};
-let traitsPerCategoryCount = {};
+// intialize layers to chart
+layerConfigurations.forEach((config) => {
+  let layers = config.layersOrder;
+
+  layers.forEach((layer) => {
+    // get elements for each layer
+    let elementsForLayer = [];
+    let elements = getElements(`${layersDir}/${layer.name}/`);
+    elements.forEach((element) => {
+      // just get name and weight for each element
+      let rarityDataElement = {
+        trait: element.name,
+        weight: element.weight.toFixed(0),
+        occurrence: 0, // initialize at 0
+      };
+      elementsForLayer.push(rarityDataElement);
+    });
+    let layerName =
+      layer.options?.["displayName"] != undefined
+        ? layer.options?.["displayName"]
+        : layer.name;
+    // don't include duplicate layers
+    if (!rarityData.includes(layer.name)) {
+      // add elements for each layer to chart
+      rarityData[layerName] = elementsForLayer;
+    }
+  });
+});
 
 // fill up rarity chart with occurrences from metadata
 data.forEach((element) => {
@@ -39,25 +65,16 @@ Object.keys(traitsPerCategoryCount).forEach((category) => {
 });
 const get_avg_trait_per_cat = sumTraitsPerCat / Object.keys(traitsPerCategoryCount).length;
 
-let traitMap = {};
-for (var layer of Object.keys(categoryCount)) {
-  let valueMap = {};
-  for (var attribute of Object.keys(traitsPerCategoryCount[layer])) {
-    let attributeOccurrence = traitsPerCategoryCount[layer][attribute];
-    let attributeFrequency = parseFloat((attributeOccurrence / editionSize));
-    let attributeRarity = parseFloat(1 / attributeFrequency);
-    let traitOccurancePercentage = parseFloat((categoryCount[layer] / editionSize)) * 100;
-    let traitFrequency = parseFloat((categoryCount[layer] / editionSize));
-    valueMap = {
-      ...valueMap, [attribute]: {
-        attributeOccurrence,
-        attributeFrequency,
-        attributeRarity,
-        traitOccurance: categoryCount[layer],
-        traitFrequency,
-        traitOccurancePercentage: parseFloat(traitOccurancePercentage),
-      }
-    }
+// convert occurrences to occurence string
+for (var layer in rarityData) {
+  for (var attribute in rarityData[layer]) {
+    // get chance
+    let chance =
+      ((rarityData[layer][attribute].occurrence / editionSize) * 100).toFixed(2);
+
+    // show two decimal places in percent
+    rarityData[layer][attribute].occurrence =
+      `${rarityData[layer][attribute].occurrence} in ${editionSize} editions (${chance} %)`;
   }
   traitMap = { ...traitMap, [layer]: { ...valueMap } }
 }
